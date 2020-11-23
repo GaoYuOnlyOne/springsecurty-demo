@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <link rel="stylesheet" href="http://www.layuicdn.com/auto/css/layui.css">-->
+    <script src="http://www.layuicdn.com/auto/layui.js" v="layui" e="layui"></script>
+</head>
+<body>
+<form class="layui-form" method="post" action="/login" style="margin-top: 200px;margin-left: 300px">
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名：</label>
+        <div class="layui-input-block">
+            <input type="text" name="username" required  lay-verify="required" placeholder="admin" value="admin" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码框：</label>
+        <div class="layui-input-inline">
+            <input type="password" name="password" required lay-verify="required" placeholder="123" value="123" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <input type="checkbox" name="remember-me"/>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" type="submit">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

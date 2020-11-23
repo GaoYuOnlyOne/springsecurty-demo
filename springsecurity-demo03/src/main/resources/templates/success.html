@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    登录成功
+    <button type="button" id="click">点击</button>
+    <span id="show"></span>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+
+    $("#click").click(function () {
+        $.ajax({
+            url: "http://localhost:8080/admin",
+            type: "GET",
+            dataType: "json",
+            success: function (res) {
+                $("#show").text(res.data)
+            },
+            error: function (res) {
+                alert("请求错误")
+            }
+        })
+    })
+</script>
+</html>

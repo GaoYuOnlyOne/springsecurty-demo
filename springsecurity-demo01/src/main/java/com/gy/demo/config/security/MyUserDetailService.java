@@ -7,6 +7,7 @@ import com.gy.demo.service.RoleService;
 import com.gy.demo.service.UserRoleService;
 import com.gy.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -28,7 +29,7 @@ import java.util.List;
  **/
 @Service
 public class MyUserDetailService implements UserDetailsService {
-
+    @Qualifier("userService2")
     @Autowired
     private UserService userService;
 

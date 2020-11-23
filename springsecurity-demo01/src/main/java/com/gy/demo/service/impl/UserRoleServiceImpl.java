@@ -7,6 +7,7 @@ import com.gy.demo.model.SysUserRole;
 import com.gy.demo.service.UserRoleService;
 import com.gy.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -17,12 +18,14 @@ import java.util.List;
  * @Date 2020/11/19 16:27
  * @Version 1.0
  **/
+@Service
 public class UserRoleServiceImpl implements UserRoleService {
     @Autowired
     private UserRoleMapper userRoleMapper;
 
     @Override
     public List<SysUserRole> selectListByUserId(Long userId) {
-        return userRoleMapper.selectListByUserId(userId);
+        SysUserRole sysUserRole = SysUserRole.builder().userId(userId).build();
+        return userRoleMapper.select(sysUserRole);
     }
 }

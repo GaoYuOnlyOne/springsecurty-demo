@@ -1,6 +1,10 @@
 package com.gy.demo.model;
 
+import lombok.Builder;
 import lombok.Data;
+
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @ClassName SysUser
@@ -10,7 +14,10 @@ import lombok.Data;
  * @Version 1.0
  **/
 @Data
+@Builder
+@Table(name = "sys_user")
 public class SysUser {
+    @Id
     private Long id;
     private String name;
     private String password;

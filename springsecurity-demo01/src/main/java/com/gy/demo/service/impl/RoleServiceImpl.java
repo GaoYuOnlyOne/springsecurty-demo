@@ -7,6 +7,7 @@ import com.gy.demo.model.SysUser;
 import com.gy.demo.service.RoleService;
 import com.gy.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * @ClassName UserService
@@ -15,12 +16,13 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Date 2020/11/19 16:27
  * @Version 1.0
  **/
+@Service
 public class RoleServiceImpl implements RoleService {
     @Autowired
     private RoleMapper roleMapper;
 
     @Override
     public SysRole selectById(Long roleId) {
-        return roleMapper.selectById(roleId);
+        return roleMapper.selectByPrimaryKey(roleId);
     }
 }

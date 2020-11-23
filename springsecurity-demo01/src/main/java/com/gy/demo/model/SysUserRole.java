@@ -1,7 +1,9 @@
 package com.gy.demo.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,6 +17,8 @@ import javax.persistence.Table;
  **/
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "sys_user_role")
 public class SysUserRole {
     private Long userId;
